@@ -1,38 +1,71 @@
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="./style/style.css">
 </head>
 <body>
-    <button id="signup">signup</button>
-    <button id="login">login</button>
-    <button id="rank">rank</button>
-    <button id="help">help</button>
-    <script>
-        function $(id) {
-            return document.getElementById(id)
+    <div id="content">
+        <img class="bg" src="./img/login.png">
+        <div class="test">
+            <input type="text" id="id" value="" class="input-text">
+            <input type="password" id="psw" value="" class="input-text">
+            <input type="checkbox" id="rememberme">
+            <br>
+            <img id="start" src="./img/start.png">
+            <img id="signup" src="./img/goto-sign-up.png">
+            <script src="./dist/index.js"></script>
+        </div>
+    </div>
+    <style>
+        .input-text {
+            position: absolute;
+            border: 1px solid; 
+            border-color: #CCC #EEE #EEE #CCC;
+            border-radius: 10vh;
         }
-        var signup = $("signup")
-        var login = $("login")
-        var rank = $("rank")
-        var help = $("help")
-        signup.addEventListener("click",function() {
-            window.location.href = './signup.html?id=muxi'
-        })
-        login.addEventListener("click",function() {
-            window.location.href = './login.html'
-        })
-        rank.addEventListener("click",function() {
-            window.location.href = './rank.html'
-        })
-        help.addEventListener("click",function() {
-            window.location.href = './help.html'
-        })
-
+        #id{
+            left: 38.5vw;
+            top: 39vh;
+        }
+        #psw{
+            left: 38.5vw;
+            top: 53vh;
+        }
+        #rememberme{
+            position: absolute;
+            left: 42vw;
+            top: 63.5vh;
+        }
+        #start{
+            position: absolute;
+            cursor: pointer;
+            width: 10vw;
+            height: 9vh;
+            left: 48vw;
+            top: 70vh;
+        }
+        #signup{
+            position: absolute;
+            cursor: pointer;
+            width: 7vw;
+            height: 5vh;
+            left: 38vw;
+            top: 72vh;
+        }
+    </style>
+    <script>
+    function rotate(){
+    var contentDOM = document.getElementById('content');
+        contentDOM.style.width = height + 'px';
+        contentDOM.style.height = width + 'px';
+        contentDOM.style.top = (height - width) / 2 + 'px';
+        contentDOM.style.left = 0 - (height - width) / 2 + 'px';
+        contentDOM.style.transform = 'rotate(90deg)';
+    }
     </script>
-    <script src="./dist/index.js"></script>
 </body>
 </html>

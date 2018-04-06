@@ -10,14 +10,12 @@ var data = {
     id: "",
     password: ""
 }
-var signUp = function(data) {
-    return service.signUp(data)
-}
+
 submit.addEventListener("click", function() {
     data.id = id.value
     data.password = psw.value
     if(data.id.length && data.id.length) {
-        signUp(data).then(json=>{
+        service.signUp(data).then(json=>{
             if(json.status == 200) {
                 alert("注册成功！")
             }

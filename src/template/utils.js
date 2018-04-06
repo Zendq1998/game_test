@@ -2,6 +2,8 @@ export function $(id) {
     return document.getElementById(id)
 }
 
+
+
 export function captureOrient(element) {
     var orient = {
         beta: 0,
