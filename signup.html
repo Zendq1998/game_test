@@ -4,12 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./style/style.css">
     <title>Document</title>
 </head>
 <body>
-    账号<input type="text" id="id" name="id" value="木小西">
-    密码<input type="text" id="psw" name="id" value="psw">
-    <input type="button" value="提交" id="submit">
+    <img src="./img/sign-up.png" class="bg" id="bgsignup">
+    <div class="test">
+        <input type="text" id="id" name="id" value="木小西" class="input-text">
+        <input type="text" id="psw" name="id" value="psw" class="input-text">
+        <img id="submit" src="./img/start.png" alt="">
+    </div>
     <script src="./dist/signup.js"></script>
+
+    <style>
+        .input-text {
+            position: absolute;
+            border: 1px solid; 
+            border-color: #CCC #EEE #EEE #CCC;
+            border-radius: 10vh;
+        }
+        #id{
+            left: 38.5vw;
+            top: 39vh; 
+        }
+        #psw{
+            left: 38.5vw;
+            top: 53vh;
+        }
+        #submit{
+            position: absolute;
+            cursor: pointer;
+            width: 7vw;
+            height: 5vh;
+            left: 45vw;
+            top: 68vh
+        }
+    </style>
 </body>
 </html>

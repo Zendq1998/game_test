@@ -9,7 +9,7 @@
 </head>
 <body>
     <div id="content">
-        <img class="bg" src="./img/login.png">
+        <img id="bgLogin" class="bg" src="./img/login.png">
         <div class="test">
             <input type="text" id="id" value="" class="input-text">
             <input type="password" id="psw" value="" class="input-text">
@@ -58,14 +58,7 @@
         }
     </style>
     <script>
-    function rotate(){
-    var contentDOM = document.getElementById('content');
-        contentDOM.style.width = height + 'px';
-        contentDOM.style.height = width + 'px';
-        contentDOM.style.top = (height - width) / 2 + 'px';
-        contentDOM.style.left = 0 - (height - width) / 2 + 'px';
-        contentDOM.style.transform = 'rotate(90deg)';
-    }
+        
     </script>
 </body>
 </html>

@@ -29,16 +29,18 @@ window.onload = function() {
 canvas.setAttribute("width",window.innerWidth)
 canvas.setAttribute("height",window.innerHeight)
 
+console.log(canvas.width)
 
 window.addEventListener('deviceorientation', function() {
     beta_dom.innerHTML = orient.beta
     gamma_dom.innerHTML = orient.gamma
 })
+
 var img = new Image()
 img.onload = function() {
-    ctx.drawImage(img, 100, 0,50,50)
+    ctx.drawImage(img, 0, 0,canvas.width,canvas.height)
 }
-img.src = "./img/drop1.png"
+img.src = "./img/bg-game.png"
 
 postscore.addEventListener("click",function() {
     service.postscore(data,token).then(res => {
