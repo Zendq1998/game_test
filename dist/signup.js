@@ -71,14 +71,39 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./src/service/app.js":
+/*!****************************!*\
+  !*** ./src/service/app.js ***!
+  \****************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _fetch_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./fetch.js */ \"./src/service/fetch.js\");\n\n\nlet service = {\n    signUp(data) {\n        return Object(_fetch_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(\"http://119.23.79.87:1477/api/v1.0/signup/\", {\n            method: \"POST\",\n            data: data\n        })\n    }\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (service);\n\n//# sourceURL=webpack:///./src/service/app.js?");
+
+/***/ }),
+
+/***/ "./src/service/fetch.js":
+/*!******************************!*\
+  !*** ./src/service/fetch.js ***!
+  \******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return Fetch; });\nfunction Fetch(url, opt = {}, token) { \n    \n    // 设置请求方法\n    opt.method = opt.method || 'GET';\n    // 处理要发送的数据\n    if (opt.data) {\n        if (/GET/i.test(opt.method)) {\n        url = `${url}&${obj2query(opt.data)}`;\n        } else {\n        opt.headers = {\n            'Accept': 'application/json',\n            'Content-Type': 'application/json',\n            'Access-Control-Allow-Origin': '*',\n            'token': token\n        };\n        opt.body = JSON.stringify(opt.data);\n        }\n    }\n    \n        return fetch(url, opt)\n        .then(res => {\n            console.log(res);\n            switch (res.status) {\n                case 200:\n                    return res;\n                default:\n                    return res;\n                    throw res.message;\n            }\n        })//返回一个response\n        // .then(response => {  \n        // return response.json();\n        // }).then(\n        //     json => {\n        //         switch (json.code) {\n        //             case 200:\n        //               return json;\n        //             case 502:\n        //               util.message(json.message, 'err');\n        //               throw json.message;\n        //           }\n        //     }\n        // )\n    }\n\n//# sourceURL=webpack:///./src/service/fetch.js?");
+
+/***/ }),
+
 /***/ "./src/signup.js":
 /*!***********************!*\
   !*** ./src/signup.js ***!
   \***********************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-eval("alert(\"signup\")\n\n//# sourceURL=webpack:///./src/signup.js?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _service_app_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./service/app.js */ \"./src/service/app.js\");\n\nfunction $(id) {\n    return document.getElementById(id)\n}\nvar id = $(\"id\")\nvar psw = $(\"psw\")\nvar submit = $(\"submit\")\nconsole.log(_service_app_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])\nvar data = {\n    id: \"\",\n    password: \"\"\n}\nvar signUp = function(data) {\n    return _service_app_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"].signUp(data)\n}\nsubmit.addEventListener(\"click\", function() {\n    data.id = id.value\n    data.password = psw.value\n    if(data.id.length && data.id.length) {\n        signUp(data).then(json=>{\n            if(json.status == 200) {\n                alert(\"注册成功！\")\n            }\n            if(json.status == 401) {\n                alert(\"该用户已被注册！\")\n            }\n            else {\n                alert(\"失败！\")\n            }\n        })\n    }\n })\n\n\n//# sourceURL=webpack:///./src/signup.js?");
 
 /***/ })
 
