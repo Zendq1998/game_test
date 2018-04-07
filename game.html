@@ -8,16 +8,35 @@
     <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
-    
-    <!-- <div id="battleground"></div> -->
     <canvas id="canvas" width=100% height=100%>
-    <img src="./img/bg-game.png" alt="">
+        <!-- 背景图层 -->
+    </canvas>
+    
+    <canvas id="canvas1" width=100% height=100%>
+        <!-- 小水滴（主角）图层 -->
+    </canvas>
+
+    <canvas id="canvas2" width=100% height=100%>
+            <!-- 火焰图层 -->
+    </canvas>
+
+    <canvas id="canvas3" width=100% height=100%>
+            <!-- 花a图层 -->
+    </canvas>
+    <canvas id="canvas4" width=100% height=100%>
+        <!-- 花b图层 -->
+    </canvas>
+    <canvas id="canvas5" width=100% height=100%>
+        <!-- 补给水珠图层 -->
     </canvas>
     <div class="tips">
-        beta: <div id="beta"></div>
+        <!-- beta: <div id="beta"></div>
         gamma: <div id="gamma"></div>
-        <button id="postscore">上分</button>
+        <button id="postscore">上分</button> -->
+        水量：<div id="shuiliang"></div>
+        积分：<div id="jifen"></div>
     </div>
+
     <script src="dist/game.js"></script>
     <script>
         

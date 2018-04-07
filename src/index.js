@@ -15,6 +15,7 @@ var data = {
     password: ""
 }
 
+
 function judgeOrient() {
     if(window.innerHeight > window.innerWidth) {
         bgLogin.style.height = "50vh"
@@ -103,7 +104,7 @@ start.addEventListener("click",function() {
             }
             cookie.clearCookie("token")
             cookie.setCookie("token",json.token,0.1)
-            window.location.href = "./game.html"+"?id="+data.id
+            window.location.href = "./level.html"+"?id="+data.id
         }
     })
     

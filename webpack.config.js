@@ -7,7 +7,8 @@ module.exports = {
         login: __dirname+'/src/login.js',
         signup: __dirname+'/src/signup.js',
         rank: __dirname+'/src/rank.js',
-        help: __dirname+'/src/help.js'
+        help: __dirname+'/src/help.js',
+        level: __dirname+'/src/level.js',
     },
     output: {
         filename: '[name].js',
